@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('tbl_users', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("designation");
+            $table->string("designation")->default("users");
             $table->string("email");
-            $table->string("phone");
+            $table->string("phone")->nullable();
             $table->string("password");
-            $table->string("type");
-            $table->tinyInteger("status");
-            $table->integer("role");
-            $table->string("permission_role");
+            $table->string("type")->nullable();
+            $table->tinyInteger("status")->default(0);
+            $table->integer("role")->nullable();
+            $table->string("permission_role")->nullable();
             $table->timestamps();
         });
     }

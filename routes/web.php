@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ForecastingController;
 use App\Http\Controllers\MailSettingController;
+use App\Http\Controllers\ProductionTableController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -282,4 +283,6 @@ Route::group(['middleware' => ['XSS']], function () {
             Route::delete('/currency/{id}', 'destroy')->name('currency.destroy');
         });
     });
+
+    Route::resource("production-module",ProductionTableController::class);
 });
